@@ -1,10 +1,12 @@
-# Henrik242 Procenv
+# Homebrew formula for procenv
+
+Formula for https://github.com/henrik242/procenv
 
 ## How do I install these formulae?
 
 `brew install henrik242/procenv/<formula>`
 
-Or `brew tap henrik242/procenv` and then `brew install <formula>`.
+Or `brew tap henrik242/procenv` and then `brew install procenv`.
 
 ## Documentation
 
