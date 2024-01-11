@@ -11,6 +11,6 @@ class Procenv < Formula
   end
 
   test do
-    assert_equals "Unaccessible or missing PID: 1234567890", shell_output("#{bin}/procenv 1234567890").strip
+    assert_equal "Unaccessible or missing PID: 1234567890", shell_output("#{bin}/procenv 1234567890").strip
   end
 end
