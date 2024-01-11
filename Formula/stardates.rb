@@ -1,4 +1,4 @@
-class Procenv < Formula
+class Stardates < Formula
   desc "Displays date in 5 formats (including stardate of course)"
   homepage "https://github.com/henrik242/stardates"
   url "https://github.com/henrik242/stardates/archive/refs/tags/1.6.1.tar.gz"
