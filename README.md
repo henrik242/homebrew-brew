@@ -1,12 +1,18 @@
-# Homebrew formula for procenv
+# Various Homebrew formulae
 
-Formula for https://github.com/henrik242/procenv
+### procenv
 
-## How do I install these formulae?
+Source: https://github.com/henrik242/procenv
 
-`brew install henrik242/brew/procenv`
+Install: `brew install henrik242/brew/procenv`
 
-Or `brew tap henrik242/brew` and then `brew install procenv`.
+### Ruby 2.4.10
+
+A copy of https://github.com/Homebrew/homebrew-core/blob/d025b5d/Formula/ruby%402.4.rb which was
+[disabled](https://github.com/Homebrew/homebrew-core/commit/a503fdcb7d7dafd0f41bf8d9f4f0302cacba22ba) (and
+later removed) from Homebrew Aug 6, 2022.
+
+Install: `brew install henrik242/brew/ruby@2.4`
 
 ## Documentation
 
