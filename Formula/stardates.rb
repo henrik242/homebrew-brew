@@ -3,7 +3,7 @@ class Stardates < Formula
   homepage "https://github.com/henrik242/stardates"
   url "https://github.com/henrik242/stardates/archive/refs/tags/1.6.1.tar.gz"
   sha256 "aa7ab49342cd7356f0ae2b05a0823052df84e76de471ef796d157eec17491625"
-  license "BSD4CLAUSE"
+  license "BSD-4-Clause"
 
   def install
     system "make"
