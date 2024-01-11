@@ -14,7 +14,8 @@ later removed) from Homebrew Aug 6, 2022.
 
 ### Stardates
 
-* Source: ftp://ftp.cc.umanitoba.ca/startrek/stardates-pgms/
+* Source: https://github.com/henrik242/stardates
+* Original source: ftp://ftp.cc.umanitoba.ca/startrek/stardates-pgms/
 * More info: https://starchive.cs.umanitoba.ca/?stardates/
 * Install: `brew install henrik242/brew/stardates`
 
