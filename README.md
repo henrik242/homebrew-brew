@@ -4,9 +4,9 @@ Formula for https://github.com/henrik242/procenv
 
 ## How do I install these formulae?
 
-`brew install henrik242/procenv/<formula>`
+`brew install henrik242/brew/procenv`
 
-Or `brew tap henrik242/procenv` and then `brew install procenv`.
+Or `brew tap henrik242/brew` and then `brew install procenv`.
 
 ## Documentation
 
