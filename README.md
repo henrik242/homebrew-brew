@@ -1,10 +1,10 @@
 # Various Homebrew formulae
 
-### procenv
+### envps
 
-Install: `brew install henrik242/brew/procenv`
+Install: `brew install henrik242/brew/envps`
 
-* Source: https://github.com/henrik242/procenv
+* Source: https://github.com/henrik242/envps
 
 ### Ruby 2.4.10
 
