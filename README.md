@@ -20,7 +20,7 @@ Install: `brew install henrik242/brew/stardates`
 I originally uploaded this to FreshPorts in 2005: https://www.freshports.org/astro/stardates/
 
 * Source: https://github.com/henrik242/stardates
-* Original source: ftp://ftp.cc.umanitoba.ca/startrek/stardates-pgms/
+* Original source: [ftp.cc.umanitoba.ca/startrek/stardates-pgms/](ftp://ftp.cc.umanitoba.ca/startrek/stardates-pgms/)
 *  More info: https://starchive.cs.umanitoba.ca/?stardates/
 
 
