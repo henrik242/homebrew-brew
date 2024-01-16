@@ -28,6 +28,8 @@ I originally uploaded this to FreshPorts in 2005: https://www.freshports.org/ast
 
 Install: `brew install henrik242/brew/vladbot`
 
+* Source: https://github.com/hipdrome/vladbot
+
 ## Homebrew
 
 `brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
