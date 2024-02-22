@@ -8,6 +8,7 @@ class RubyAT24 < Formula
   bottle do
     root_url "https://github.com/henrik242/homebrew-brew/releases/download/1.0"
     rebuild 2
+    sha256 monterey:      "54be993aebd59caa418cc1eef878236e7f1fc0ad652abc0087a9f06536701722"
     sha256 arm64_ventura: "74351ed6e881145fb269873c079214d529601057cf8c41c747f63239fbba3581"
     sha256 x86_64_linux:  "ad5fe350dc442a63781768e5741c70fa7053f729bc888ab8ab88956041d8a145"
   end

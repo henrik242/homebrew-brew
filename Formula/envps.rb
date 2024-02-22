@@ -8,6 +8,7 @@ class Envps < Formula
   bottle do
     root_url "https://github.com/henrik242/homebrew-brew/releases/download/1.0"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, monterey:      "5af6e7cacf1e377bf97aed3cf6ec493cc9c2cac634d4e2b60925721c53773332"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "84e53916852ba51134a9662c7961dd3aa19fbd3387d04d279955da3d3760d6f8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a060c6377222bc671f93e0e0556b61b484246a8ce2cf9ad51649af509b83801"
   end
