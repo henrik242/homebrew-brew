@@ -3,7 +3,6 @@ class Sqlworkbenchj < Formula
   homepage "https://www.sql-workbench.eu/"
   url "https://www.sql-workbench.eu/Workbench-Build131.zip"
   sha256 "b63e897988839cbd87114a50735c7f9b847941bdf5b5502ff212c1e1a12dc755"
-  license "Proprietary"
 
   livecheck do
     url "https://www.sql-workbench.eu/downloads.html"
