@@ -13,6 +13,13 @@ Install: `brew install henrik242/brew/ruby@2.4`
 This is a copy of https://github.com/Homebrew/homebrew-core/blob/d025b5d/Formula/ruby%402.4.rb which was
 [disabled](https://github.com/Homebrew/homebrew-core/commit/a503fdcb7d7dafd0f41bf8d9f4f0302cacba22ba) (and  later removed) from Homebrew Aug 6, 2022.
 
+### Ruby 2.5.9
+
+Install: `brew install henrik242/brew/ruby@2.5`
+
+This is a copy of https://github.com/Homebrew/homebrew-core/blob/ab3c19c1/Formula/ruby%402.5.rb which was
+[disabled](https://github.com/Homebrew/homebrew-core/commit/ab3c19c1) (and  later removed) from Homebrew Aug 6, 2022.
+
 ### SQL Workbench/J
 
 Install: `brew install henrik242/brew/sqlworkbenchj`
