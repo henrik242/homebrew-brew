@@ -17,8 +17,6 @@ class RubyAT25 < Formula
 
   keg_only :versioned_formula
 
-  disable! date: "2022-07-31", because: :unsupported
-
   depends_on "pkg-config" => :build
   depends_on "libyaml"
   depends_on "openssl@1.1"
