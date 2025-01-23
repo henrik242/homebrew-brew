@@ -20,12 +20,6 @@ Install: `brew install henrik242/brew/ruby@2.5`
 This is a copy of https://github.com/Homebrew/homebrew-core/blob/ab3c19c1/Formula/ruby%402.5.rb which was
 [disabled](https://github.com/Homebrew/homebrew-core/commit/ab3c19c1) (and  later removed) from Homebrew Aug 6, 2022.
 
-### SQL Workbench/J
-
-Install: `brew install henrik242/brew/sqlworkbenchj`
-
-Source: https://www.sql-workbench.eu/downloads.html
-
 ### Stardates
 
 Install: `brew install henrik242/brew/stardates`
