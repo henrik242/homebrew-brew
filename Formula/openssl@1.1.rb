@@ -130,7 +130,7 @@ class OpensslAT11 < Formula
 
   test do
     # Make sure the necessary .cnf file exists, otherwise OpenSSL gets moody.
-    assert_predicate pkgetc/"openssl.cnf", :exist?,
+    assert_path_exists pkgetc/"openssl.cnf", :exist?,
             "OpenSSL requires the .cnf file for some functionality"
 
     # Check OpenSSL itself functions as expected.
