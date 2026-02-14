@@ -1,5 +1,13 @@
 # Various Homebrew formulae
 
+### CCB (Cocoa CapsBeeper)
+
+```
+brew install henrik242/brew/ccb
+```
+
+Source: https://github.com/henrik242/ccb
+
 ### envps
 
 ```
