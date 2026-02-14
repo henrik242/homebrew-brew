@@ -8,4 +8,15 @@ cask "ccb" do
   homepage "https://github.com/henrik242/ccb"
 
   app "Cocoa CapsBeeper.app"
+
+  caveats <<~EOS
+    The app is not signed or notarized. macOS may show a Gatekeeper warning:
+    "Apple could not determine whether the app is free from malware."
+
+    To fix this, run:
+      xattr -d com.apple.quarantine "/Applications/Cocoa CapsBeeper.app"
+
+    Or reinstall with:
+      brew install --cask --no-quarantine henrik242/brew/ccb
+  EOS
 end
