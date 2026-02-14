@@ -15,6 +15,10 @@ class Ccb < Formula
     prefix.install "build/Default/Cocoa CapsBeeper.app"
   end
 
+  def post_install
+    ln_sf prefix/"Cocoa CapsBeeper.app", "/Applications/Cocoa CapsBeeper.app"
+  end
+
   test do
     assert_path_exists prefix/"Cocoa CapsBeeper.app/Contents/MacOS/Cocoa CapsBeeper"
   end
