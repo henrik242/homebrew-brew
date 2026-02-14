@@ -4,6 +4,7 @@ class Ccb < Formula
   url "https://github.com/henrik242/ccb/archive/refs/tags/2.0.tar.gz"
   sha256 "3775ececa06e516e8253c09efd305ebb0c280fc1e22aa570775b76b06f79a0ab"
   license "Unlicense"
+  revision 1
 
   depends_on xcode: ["14.0", :build]
   depends_on :macos
