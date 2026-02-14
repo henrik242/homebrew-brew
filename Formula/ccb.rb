@@ -4,7 +4,7 @@ class Ccb < Formula
   url "https://github.com/henrik242/ccb/archive/refs/tags/2.0.tar.gz"
   sha256 "3775ececa06e516e8253c09efd305ebb0c280fc1e22aa570775b76b06f79a0ab"
   license "Unlicense"
-  revision 1
+  revision 2
 
   depends_on xcode: ["14.0", :build]
   depends_on :macos
@@ -17,7 +17,8 @@ class Ccb < Formula
   end
 
   def post_install
-    ln_sf prefix/"Cocoa CapsBeeper.app", "/Applications/Cocoa CapsBeeper.app"
+    system "rm", "-f", "/Applications/Cocoa CapsBeeper.app"
+    system "ln", "-sf", "#{prefix}/Cocoa CapsBeeper.app", "/Applications/Cocoa CapsBeeper.app"
   end
 
   test do
