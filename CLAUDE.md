@@ -1,8 +1,9 @@
 ## Workflow
 
 - When changing a formula, always bump `revision` so `brew upgrade` picks up the change
-- When adding a new formula, also add it to README.md
-- After pushing formula changes, users need `brew update` before `brew upgrade` to refresh the tap cache
+- When changing a cask, bump `version` if the installed artifact changes. Casks don't have `revision` — if only metadata (caveats, desc) changes, flag this to the user
+- When adding a new formula or cask, also add it to README.md
+- After pushing changes, users need `brew update` before `brew upgrade` to refresh the tap cache
 
 ## Homebrew formula lint rules
 
@@ -11,8 +12,7 @@
 - Use `assert_path_exists` not `assert_predicate path, :exist?`
 - Dependency order matters: `xcode` before `macos`
 
-## .app formulae
+## .app distribution
 
-- Use `post_install` (not `install`) for symlinks to `/Applications`
-- Use `system "ln", "-sf"` instead of Ruby's `ln_sf` — avoids permission issues with paths outside the Homebrew prefix
-- Remove stale target before creating symlink: `system "rm", "-f"` first
+- Use a Cask (not a Formula) to install .app bundles to `/Applications` — Formulae can't write there due to permissions
+- The app is not notarized: document `--no-quarantine` flag and `xattr -d com.apple.quarantine` workaround
