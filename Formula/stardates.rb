@@ -1,16 +1,9 @@
 class Stardates < Formula
-  desc "Displays date in 5 formats (including stardate of course)"
+  desc "Convert between stardates and other calendar systems"
   homepage "https://github.com/henrik242/stardates"
-  url "https://github.com/henrik242/stardates/archive/refs/tags/1.6.1.tar.gz"
-  sha256 "aa7ab49342cd7356f0ae2b05a0823052df84e76de471ef796d157eec17491625"
+  url "https://github.com/henrik242/stardates/archive/refs/tags/1.7.0.tar.gz"
+  sha256 "d7ba409121e1ab13e3c07c45429d0a31c0b871b23afb3b515f8891de2175bfe1"
   license "BSD-4-Clause"
-
-  bottle do
-    root_url "https://github.com/henrik242/homebrew-brew/releases/download/1.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5b3472de49343451086db70dab5fbb54829af36543a44a281e08b9e90e3dcd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d947eb7a0989eb66cd82aa15304aa7aa0d49b4c42bb09b2390d0d317159289e6"
-  end
 
   def install
     system "make"
