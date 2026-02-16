@@ -1,6 +1,6 @@
 cask "ccb" do
   version "2.1"
-  sha256 "78b15b1f6a9798c8e76be741e89a50957fd28d43a0ecdb3db1bac93bff83845b"
+  sha256 "845ade0feea37078da79af3e2c5a07f9b1944fdd8a9dd0cbe4a9ceacbd44352f"
 
   url "https://github.com/henrik242/ccb/releases/download/#{version}/CCB.app.tgz"
   name "Cocoa CapsBeeper"
