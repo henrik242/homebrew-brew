@@ -29,6 +29,15 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
+      - name: Verify formula/cask checksums
+        run: |
+          for f in Formula/*.rb; do
+            brew fetch --retry "henrik242/brew/$(basename "$f" .rb)"
+          done
+          for c in Casks/*.rb; do
+            brew fetch --cask --retry "henrik242/brew/$(basename "$c" .rb)"
+          done
+
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
 
