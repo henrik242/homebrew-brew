@@ -24,20 +24,16 @@ Source: https://github.com/henrik242/envps
 
 ### kmpzip
 
-Install: `brew install henrik242/brew/kmpzip`
+```
+brew install henrik242/brew/kmpzip
+```
 
 Source: https://github.com/henrik242/kmp-zip
 
-### Ruby 2.4.10
+### Ruby (deprecated versions)
 
-Install: `brew install henrik242/brew/ruby@2.4`
+Older Ruby versions [disabled and removed from Homebrew core](https://github.com/Homebrew/homebrew-core/commit/a503fdcb7d7dafd0f41bf8d9f4f0302cacba22ba), copied here so they remain installable:
 
-This is a copy of https://github.com/Homebrew/homebrew-core/blob/d025b5d/Formula/ruby%402.4.rb which was
-[disabled](https://github.com/Homebrew/homebrew-core/commit/a503fdcb7d7dafd0f41bf8d9f4f0302cacba22ba) (and  later removed) from Homebrew Aug 6, 2022.
-
-### Ruby 2.5.9
-
-Older deprecated Ruby versions that has been [copied from Homebrew](https://github.com/Homebrew/homebrew-core/blob/30f91fd177043e01aaab8bc8298e2771d0d7e361/Formula/r/ruby%403.1.rb). 
 ```
 brew install henrik242/brew/ruby@2.4
 brew install henrik242/brew/ruby@2.5
