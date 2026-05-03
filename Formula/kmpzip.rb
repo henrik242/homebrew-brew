@@ -1,7 +1,7 @@
 class Kmpzip < Formula
   desc "Compress and extract ZIP and GZIP archives"
   homepage "https://github.com/henrik242/kmp-zip"
-  version "0.11.0"
+  version "0.11.1"
   license "MPL-2.0"
 
   livecheck do
@@ -11,23 +11,23 @@ class Kmpzip < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/henrik242/kmp-zip/releases/download/v0.11.0/kmpzip-macos-arm64"
-      sha256 "7dcc83339f94877e0713286d68d914103042a09a600fff60eb695602ab3e00e5"
+      url "https://github.com/henrik242/kmp-zip/releases/download/v0.11.1/kmpzip-macos-arm64"
+      sha256 "1ad8becc44062e690c24e26bcd941af47b4cbe08fc445643283a11c969663656"
     end
     on_intel do
-      url "https://github.com/henrik242/kmp-zip/releases/download/v0.11.0/kmpzip-macos-x64"
-      sha256 "1c150801cca494f8aca0f5dca4b0367e1170d14a3595abea55e733caa29dee56"
+      url "https://github.com/henrik242/kmp-zip/releases/download/v0.11.1/kmpzip-macos-x64"
+      sha256 "446584e0fa81f134e4e8c84cb5ceac12cf8f4b16ca07c8ccee20ae12de0fb80d"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/henrik242/kmp-zip/releases/download/v0.11.0/kmpzip-linux-arm64"
-      sha256 "05f7a6976403a2734722f2ff6db898df36d17e46a06fb3c8f56004a794675b37"
+      url "https://github.com/henrik242/kmp-zip/releases/download/v0.11.1/kmpzip-linux-arm64"
+      sha256 "f0c576f1e15776814727aab17910c09514ea7679d61d7195c65822a34a51b4fc"
     end
     on_intel do
-      url "https://github.com/henrik242/kmp-zip/releases/download/v0.11.0/kmpzip-linux-x64"
-      sha256 "250bb0920014e429d69ad483bfe8facaa42aac9788090b439531167f5e1f0873"
+      url "https://github.com/henrik242/kmp-zip/releases/download/v0.11.1/kmpzip-linux-x64"
+      sha256 "22df30a769b37c8155bc97752b5bddd424cfae83bb430f0396579d9a70b04cd7"
     end
   end
 
