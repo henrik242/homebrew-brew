@@ -18,7 +18,10 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@main
 
       - name: Untap pre-installed third-party taps
-        run: brew untap hashicorp/tap aws/tap || true
+        run: |
+          for tap in hashicorp/tap aws/tap; do
+            brew untap --force "$tap" 2>/dev/null || true
+          done
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
