@@ -7,6 +7,8 @@ cask "ccb" do
   desc "Menu bar app that sounds an alarm when Caps Lock is on"
   homepage "https://github.com/henrik242/ccb"
 
+  depends_on :macos
+
   app "Cocoa CapsBeeper.app"
 
   caveats <<~EOS
