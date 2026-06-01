@@ -13,15 +13,12 @@ jobs:
     env:
       HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
     steps:
+      - name: Remove pre-installed third-party taps
+        run: rm -rf "$(brew --repository)"/Library/Taps/hashicorp "$(brew --repository)"/Library/Taps/aws
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
-
-      - name: Untap pre-installed third-party taps
-        run: |
-          for tap in hashicorp/tap aws/tap; do
-            brew untap --force "$tap" 2>/dev/null || true
-          done
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
