@@ -43,6 +43,22 @@ brew install henrik242/brew/ruby@3.0
 brew install henrik242/brew/ruby@3.1
 ```
 
+### SQL Workbench/J
+
+```
+brew install --cask --no-quarantine henrik242/brew/sqlworkbenchj
+```
+
+DBMS-independent SQL query tool. [Disabled in homebrew-cask](https://github.com/Homebrew/homebrew-cask/blob/a64b5e8b430481379c0057aa9bea611ad0c6bced/Casks/s/sqlworkbenchj.rb)
+because it fails the Gatekeeper check, copied here so it remains installable. Requires Java 11+.
+The app is not notarized, so macOS Gatekeeper will warn that it can't check for malware. The
+`--no-quarantine` flag prevents this. If you already installed without it, run:
+```
+xattr -d com.apple.quarantine "/Applications/SQLWorkbenchJ.app"
+```
+
+Source: https://www.sql-workbench.eu/
+
 ### Stardates
 
 ```
