@@ -19,7 +19,7 @@ cask "sqlworkbenchj" do
   app "SQLWorkbenchJ.app"
 
   caveats do
-    depends_on_java "11+"
+    depends_on_java "21+"
     <<~EOS
       The app is not signed or notarized. macOS may show a Gatekeeper warning:
       "Apple could not determine whether the app is free from malware."
