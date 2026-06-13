@@ -26,9 +26,6 @@ cask "sqlworkbenchj" do
 
       To fix this, run:
         xattr -d com.apple.quarantine "/Applications/SQLWorkbenchJ.app"
-
-      Or reinstall with:
-        brew install --cask --no-quarantine henrik242/brew/sqlworkbenchj
     EOS
   end
 end

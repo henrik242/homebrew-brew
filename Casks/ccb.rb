@@ -17,8 +17,5 @@ cask "ccb" do
 
     To fix this, run:
       xattr -d com.apple.quarantine "/Applications/Cocoa CapsBeeper.app"
-
-    Or reinstall with:
-      brew install --cask --no-quarantine henrik242/brew/ccb
   EOS
 end
