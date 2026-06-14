@@ -1,6 +1,6 @@
 cask "quassel-client" do
-  version "0.15-pre.4766"
-  sha256 "dd507c759d84be199ade0322835df030460954d6635bf68b8d1407c7b2600ba0"
+  version "0.15-pre.4767"
+  sha256 "96aa8deb8099647c8da790e1221ba60e7e1ca993f718e41e7341c695756bf64f"
 
   url "https://github.com/henrik242/quassel/releases/download/#{version}/QuasselClient-macOS-arm64-#{version}.dmg",
       verified: "github.com/henrik242/quassel/"
