@@ -1,28 +1,22 @@
 cask "quassel-client" do
-  version "0.14.0,1"
-  sha256 "73b1b65f0e75c88d1dd23aa91c1916a6a3c231472a042eca0907689ab0981b60"
+  version "0.15-pre.4766"
+  sha256 "dd507c759d84be199ade0322835df030460954d6635bf68b8d1407c7b2600ba0"
 
-  url "https://github.com/quassel/quassel/releases/download/#{version.csv.first}/QuasselClient-macOS-#{version.csv.first}.dmg",
-      verified: "github.com/quassel/quassel/"
+  url "https://github.com/henrik242/quassel/releases/download/#{version}/QuasselClient-macOS-arm64-#{version}.dmg",
+      verified: "github.com/henrik242/quassel/"
   name "Quassel IRC"
   desc "Quassel IRC: Chat comfortably. Everywhere"
   homepage "https://quassel-irc.org/"
 
   livecheck do
     url :url
-    strategy :github_latest do |json|
-      tag = json["tag_name"]
-      # Keep the local revision suffix (",N") matched while upstream is unchanged,
-      # so livecheck reports current instead of "newer than upstream".
-      next tag if tag != version.csv.first
-
-      version.to_s
-    end
+    strategy :github_latest
   end
 
   # disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
-  depends_on :macos
+  depends_on macos: :big_sur
+  depends_on arch: :arm64
 
   app "Quassel Client.app"
 
@@ -33,12 +27,9 @@ cask "quassel-client" do
 
   zap trash: "~/Library/Preferences/org.quassel-irc.client.plist"
 
-  caveats do
-    requires_rosetta
-    <<~EOS
-      The app is not signed or notarized. The quarantine attribute has been removed
-      automatically on install by running:
-        xattr -dr com.apple.quarantine "/Applications/Quassel Client.app"
-    EOS
-  end
+  caveats <<~EOS
+    The app is not signed or notarized. The quarantine attribute has been removed
+    automatically on install by running:
+      xattr -dr com.apple.quarantine "/Applications/Quassel Client.app"
+  EOS
 end

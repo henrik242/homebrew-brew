@@ -34,10 +34,11 @@ brew install --cask henrik242/brew/quassel-client
 ```
 
 [Disabled in homebrew-cask](https://github.com/Homebrew/homebrew-cask/blob/5c0e5bee11729f4fe53a8afebcae4a2de472ec08/Casks/q/quassel-client.rb)
-because it fails the Gatekeeper check, copied here so it remains installable. The quarantine
-attribute is removed automatically on install. Requires Rosetta 2 on Apple Silicon.
+because it fails the Gatekeeper check, copied here so it remains installable. Installs a
+native Apple Silicon (arm64) build, so no Rosetta is needed. The quarantine attribute is
+removed automatically on install.
 
-Source: https://quassel-irc.org/
+Source: https://github.com/henrik242/quassel/releases
 
 ### Ruby (deprecated versions)
 
