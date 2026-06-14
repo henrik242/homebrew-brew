@@ -6,11 +6,8 @@
 brew install --cask henrik242/brew/ccb
 ```
 
-The app is not notarized, so macOS Gatekeeper will warn that it can't check for malware.
-After installing, run:
-```
-xattr -d com.apple.quarantine "/Applications/Cocoa CapsBeeper.app"
-```
+The app is not notarized, so macOS Gatekeeper would warn that it can't check for malware.
+The quarantine attribute is removed automatically on install.
 
 Source: https://github.com/henrik242/ccb
 
@@ -29,6 +26,18 @@ brew install henrik242/brew/kmpzip
 ```
 
 Source: https://github.com/henrik242/kmp-zip
+
+### Quassel IRC client
+
+```
+brew install --cask henrik242/brew/quassel-client
+```
+
+[Disabled in homebrew-cask](https://github.com/Homebrew/homebrew-cask/blob/5c0e5bee11729f4fe53a8afebcae4a2de472ec08/Casks/q/quassel-client.rb)
+because it fails the Gatekeeper check, copied here so it remains installable. The quarantine
+attribute is removed automatically on install. Requires Rosetta 2 on Apple Silicon.
+
+Source: https://quassel-irc.org/
 
 ### Ruby (deprecated versions)
 
@@ -51,11 +60,8 @@ brew install --cask henrik242/brew/sqlworkbenchj
 
 DBMS-independent SQL query tool. [Disabled in homebrew-cask](https://github.com/Homebrew/homebrew-cask/blob/a64b5e8b430481379c0057aa9bea611ad0c6bced/Casks/s/sqlworkbenchj.rb)
 because it fails the Gatekeeper check, copied here so it remains installable. Requires Java 21+.
-The app is not notarized, so macOS Gatekeeper will warn that it can't check for malware. After
-installing, run:
-```
-xattr -d com.apple.quarantine "/Applications/SQLWorkbenchJ.app"
-```
+The app is not notarized, so macOS Gatekeeper would warn that it can't check for malware. The
+quarantine attribute is removed automatically on install.
 
 Source: https://www.sql-workbench.eu/
 
