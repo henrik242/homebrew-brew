@@ -45,7 +45,7 @@ native Apple Silicon (arm64) build, so no Rosetta is needed. The quarantine attr
 removed automatically on install. The Qt 6 build installs as `Quassel Client Qt6.app`, so
 both casks can be installed side by side.
 
-Source: https://github.com/henrik242/quassel/releases
+Source: https://github.com/henrik242/quassel-client/releases
 
 ### Ruby (deprecated versions)
 

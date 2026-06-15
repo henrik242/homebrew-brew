@@ -1,9 +1,9 @@
 cask "quassel-client" do
-  version "0.15-pre.4768"
-  sha256 "d80bf4330b56e90be9544b6767236cf1ef1b5a83f08000557e8bea89347e7756"
+  version "0.15-pre.4764"
+  sha256 "cc8f3ec5af29cf3c957b63e8bb515db44482e9def533036a4d209dc75d5e5194"
 
-  url "https://github.com/henrik242/quassel/releases/download/#{version}/QuasselClient-macOS-arm64-#{version}.dmg",
-      verified: "github.com/henrik242/quassel/"
+  url "https://github.com/henrik242/quassel-client/releases/download/#{version}/QuasselClient-macOS-arm64-#{version}.dmg",
+      verified: "github.com/henrik242/quassel-client/"
   name "Quassel IRC"
   desc "Quassel IRC: Chat comfortably. Everywhere"
   homepage "https://quassel-irc.org/"
