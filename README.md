@@ -33,10 +33,17 @@ Source: https://github.com/henrik242/kmp-zip
 brew install --cask henrik242/brew/quassel-client
 ```
 
+For the Qt 6 build instead:
+
+```
+brew install --cask henrik242/brew/quassel-client-qt6
+```
+
 [Disabled in homebrew-cask](https://github.com/Homebrew/homebrew-cask/blob/5c0e5bee11729f4fe53a8afebcae4a2de472ec08/Casks/q/quassel-client.rb)
 because it fails the Gatekeeper check, copied here so it remains installable. Installs a
 native Apple Silicon (arm64) build, so no Rosetta is needed. The quarantine attribute is
-removed automatically on install.
+removed automatically on install. The Qt 6 build installs as `Quassel Client Qt6.app`, so
+both casks can be installed side by side.
 
 Source: https://github.com/henrik242/quassel/releases
 
