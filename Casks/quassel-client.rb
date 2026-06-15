@@ -1,6 +1,6 @@
 cask "quassel-client" do
-  version "0.15-pre.4764"
-  sha256 "cc8f3ec5af29cf3c957b63e8bb515db44482e9def533036a4d209dc75d5e5194"
+  version "0.15-pre.20260615.095056"
+  sha256 "b750d2ccecc1d17d9e0a3ee2b9f058945c9d036dc57d0bb76bd0802ab2a63b77"
 
   url "https://github.com/henrik242/quassel-client/releases/download/#{version}/QuasselClient-macOS-arm64-#{version}.dmg",
       verified: "github.com/henrik242/quassel-client/"
@@ -9,12 +9,12 @@ cask "quassel-client" do
   homepage "https://quassel-irc.org/"
 
   # The repo also publishes Qt 6 builds (see the quassel-client-qt6 cask), so
-  # match only the non-qt6 "-pre.N" release tags here.
+  # match only the non-qt6 "-pre.<timestamp>" release tags here.
   livecheck do
     url :url
     strategy :github_releases do |json|
       json.map { |release| release["tag_name"] }
-          .grep(/\A\d[\d.]*-pre\.\d+\z/)
+          .grep(/\A\d[\d.]*-pre\.[\d.]+\z/)
     end
   end
 
