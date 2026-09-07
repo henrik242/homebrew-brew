@@ -41,6 +41,19 @@ brew install henrik242/brew/kmpzip
 
 Source: https://github.com/henrik242/kmp-zip
 
+### Klaxon
+
+Menu bar app that sounds an alarm before calendar events, for people who miss the polite
+kind of notification. This is my fork of
+[mlwelles/klaxon](https://github.com/mlwelles/klaxon), built from its `fork` branch.
+See [unsigned apps](#unsigned-apps).
+
+```
+brew install --cask henrik242/brew/klaxon
+```
+
+Source: https://github.com/henrik242/klaxon
+
 ### Quassel IRC client
 
 [Disabled in homebrew-cask](https://github.com/Homebrew/homebrew-cask/blob/5c0e5bee11729f4fe53a8afebcae4a2de472ec08/Casks/q/quassel-client.rb)
@@ -112,8 +125,9 @@ Source: https://github.com/hipdrome/vladbot
 
 ## Unsigned apps
 
-The apps in the casks above are not signed or notarized, so macOS Gatekeeper would refuse
-to open them. Each cask therefore clears the quarantine attribute for you on install:
+The apps in the casks above are not notarized, and most are not signed at all, so macOS
+Gatekeeper would refuse to open them. Each cask therefore clears the quarantine attribute
+for you on install:
 
 ```
 xattr -dr com.apple.quarantine "/Applications/<the app>.app"
