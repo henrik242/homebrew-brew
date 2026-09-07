@@ -10,9 +10,6 @@ jobs:
       matrix:
         os: [ubuntu-24.04, macos-26]
     runs-on: ${{ matrix.os }}
-    env:
-      HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
-      HOMEBREW_NO_SANDBOX_LINUX: 1
     steps:
       - name: Remove pre-installed third-party taps
         run: rm -rf "$(brew --repository)"/Library/Taps/hashicorp "$(brew --repository)"/Library/Taps/aws
@@ -28,6 +25,9 @@ jobs:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
+
+      - name: Trust this tap
+        run: brew trust --tap henrik242/brew
 
       - run: brew test-bot --only-cleanup-before
 
