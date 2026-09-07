@@ -2,8 +2,9 @@ class Envps < Formula
   desc "Show process environment variables"
   homepage "https://github.com/henrik242/envps"
   url "https://github.com/henrik242/envps/archive/refs/tags/2.0.1.tar.gz"
-  sha256 "882f4a5011e437cbcdb20d7f148dba574713dfc2094d91060474f74f54d001eb"
+  sha256 "226f95b2c3d7a1792f1098cabed0188f50c2726a8eedc9e9167383de7c5b666d"
   license "MIT"
+  revision 1
 
   depends_on "rust" => :build
 
