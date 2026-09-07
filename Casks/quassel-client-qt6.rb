@@ -2,8 +2,7 @@ cask "quassel-client-qt6" do
   version "0.15-pre-qt6.20260629.192303"
   sha256 "66576718aaa88ea01d249e271ec42d79c97938f99e764745b3b72f46a9c18ca6"
 
-  url "https://github.com/henrik242/quassel-client/releases/download/#{version}/QuasselClient-macOS-arm64-#{version}.dmg",
-      verified: "github.com/henrik242/quassel-client/"
+  url "https://github.com/henrik242/quassel-client/releases/download/#{version}/QuasselClient-macOS-arm64-#{version}.dmg"
   name "Quassel IRC (Qt 6)"
   desc "Quassel IRC: Chat comfortably. Everywhere"
   homepage "https://quassel-irc.org/"
@@ -26,9 +25,8 @@ cask "quassel-client-qt6" do
   # Renamed so it can be installed alongside the non-Qt 6 quassel-client cask.
   app "Quassel Client.app", target: "Quassel Client Qt6.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Quassel Client Qt6.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Quassel Client Qt6.app"]
   end
 
   zap trash: "~/Library/Preferences/org.quassel-irc.client.plist"

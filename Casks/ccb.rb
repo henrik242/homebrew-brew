@@ -23,9 +23,8 @@ cask "ccb" do
 
   app "Cocoa CapsBeeper.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Cocoa CapsBeeper.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Cocoa CapsBeeper.app"]
   end
 
   caveats <<~EOS

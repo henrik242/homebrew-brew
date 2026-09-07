@@ -23,9 +23,8 @@ cask "sqlworkbenchj" do
 
   app "SQLWorkbenchJ.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/SQLWorkbenchJ.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/SQLWorkbenchJ.app"]
   end
 
   caveats do
