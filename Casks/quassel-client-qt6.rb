@@ -19,7 +19,7 @@ cask "quassel-client-qt6" do
 
   # disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
-  depends_on macos: :big_sur
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   # Renamed so it can be installed alongside the non-Qt 6 quassel-client cask.

@@ -19,7 +19,7 @@ cask "ccb" do
     end
   end
 
-  depends_on :macos
+  depends_on macos: :ventura
 
   app "Cocoa CapsBeeper.app"
 
