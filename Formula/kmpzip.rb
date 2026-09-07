@@ -1,7 +1,6 @@
 class Kmpzip < Formula
   desc "Compress and extract ZIP and GZIP archives"
   homepage "https://github.com/henrik242/kmp-zip"
-  version "0.15.0"
   license "MPL-2.0"
 
   livecheck do
