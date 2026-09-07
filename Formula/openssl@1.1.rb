@@ -88,7 +88,7 @@ class OpensslAT11 < Formula
     # This ensures where Homebrew's Perl is needed the Cellar path isn't
     # hardcoded into OpenSSL's scripts, causing them to break every Perl update.
     # Whilst our env points to opt_bin, by default OpenSSL resolves the symlink.
-    ENV["PERL"] = Formula["perl"].opt_bin/"perl" if which("perl") == Formula["perl"].opt_bin/"perl"
+    ENV["PERL"] = formula_opt_bin("perl")/"perl" if which("perl") == formula_opt_bin("perl")/"perl"
 
     arch_args = []
     if OS.mac?
@@ -112,9 +112,10 @@ class OpensslAT11 < Formula
     etc/"openssl@1.1"
   end
 
-  def post_install
-    rm(openssldir/"cert.pem") if (openssldir/"cert.pem").exist?
-    openssldir.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+  post_install_steps do
+    remove "openssl@1.1/cert.pem", base: :etc
+    symlink "cert.pem", "openssl@1.1/cert.pem",
+            source_base: :formula_pkgetc, source_formula: "ca-certificates", target_base: :etc
   end
 
   def caveats

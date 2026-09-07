@@ -67,7 +67,7 @@ class RubyAT30 < Formula
       (buildpath/"test").install "test/openssl"
     end
 
-    paths = %w[libyaml openssl@3 readline].map { |f| Formula[f].opt_prefix }
+    paths = %w[libyaml openssl@3 readline].map { |f| formula_opt_prefix(f) }
     args = %W[
       --prefix=#{prefix}
       --enable-shared
@@ -136,15 +136,15 @@ class RubyAT30 < Formula
     config_file.write rubygems_config
   end
 
-  def post_install
+  post_install_steps do
     # Since Gem ships Bundle we want to provide that full/expected installation
     # but to do so we need to handle the case where someone has previously
     # installed bundle manually via `gem install`.
-    rm(%W[
-      #{rubygems_bindir}/bundle
-      #{rubygems_bindir}/bundler
-    ].select { |file| File.exist?(file) })
-    rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
+    remove [
+      "lib/ruby/gems/{{version.major_minor}}.0/bin/bundle",
+      "lib/ruby/gems/{{version.major_minor}}.0/bin/bundler",
+    ], base: :homebrew_prefix
+    remove "lib/ruby/gems/{{version.major_minor}}.0/gems/bundler-*", base: :homebrew_prefix, recursive: true
   end
 
   def rubygems_config

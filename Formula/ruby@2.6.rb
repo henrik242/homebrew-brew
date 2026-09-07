@@ -35,7 +35,7 @@ class RubyAT26 < Formula
     # otherwise `gem` command breaks
     ENV.delete("SDKROOT")
 
-    paths = %w[libyaml openssl@1.1 readline].map { |f| Formula[f].opt_prefix }
+    paths = %w[libyaml openssl@1.1 readline].map { |f| formula_opt_prefix(f) }
     args = %W[
       --prefix=#{prefix}
       --enable-shared
@@ -72,21 +72,10 @@ class RubyAT26 < Formula
     elisp.install Dir["misc/*.el"].reject { |f| f == "misc/ruby-mode.el" }
   end
 
-  def post_install
+  post_install_steps do
     # Customize rubygems to look/install in the global gem directory
     # instead of in the Cellar, making gems last across reinstalls
-    config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
-    config_file.unlink if config_file.exist?
-    config_file.write rubygems_config(api_version)
-
-    # Create the sitedir and vendordir that were skipped during install
-    %w[sitearchdir vendorarchdir].each do |dir|
-      mkdir_p `#{bin}/ruby -rrbconfig -e 'print RbConfig::CONFIG["#{dir}"]'`
-    end
-  end
-
-  def rubygems_config(api_version)
-    <<~EOS
+    write_file "ruby/{{version.major_minor}}.0/rubygems/defaults/operating_system.rb", <<~RUBY, base: :lib
       module Gem
         class << self
           alias :old_default_dir :default_dir
@@ -97,11 +86,11 @@ class RubyAT26 < Formula
 
         def self.default_dir
           path = [
-            "#{HOMEBREW_PREFIX}",
+            "{{HOMEBREW_PREFIX}}",
             "lib",
             "ruby",
             "gems",
-            "#{api_version}"
+            "{{version.major_minor}}.0"
           ]
 
           @homebrew_path ||= File.join(*path)
@@ -141,11 +130,11 @@ class RubyAT26 < Formula
         end
 
         def self.default_bindir
-          "#{rubygems_bindir}"
+          "{{HOMEBREW_PREFIX}}/lib/ruby/gems/{{version.major_minor}}.0/bin"
         end
 
         def self.ruby
-          "#{opt_bin}/ruby"
+          "{{opt_prefix}}/bin/ruby"
         end
 
         # https://github.com/Homebrew/homebrew-core/issues/40872#issuecomment-542092547
@@ -155,7 +144,13 @@ class RubyAT26 < Formula
           end
         end
       end
-    EOS
+    RUBY
+
+    # Create the sitedir and vendordir that were skipped during install
+    run "/bin/sh",
+        args: ["-c", "mkdir -p \"$({{bin}}/ruby -rrbconfig -e 'print RbConfig::CONFIG[\"sitearchdir\"]')\""]
+    run "/bin/sh",
+        args: ["-c", "mkdir -p \"$({{bin}}/ruby -rrbconfig -e 'print RbConfig::CONFIG[\"vendorarchdir\"]')\""]
   end
 
   def caveats

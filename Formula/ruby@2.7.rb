@@ -81,7 +81,7 @@ class RubyAT27 < Formula
       end
     end
 
-    paths = %w[libyaml openssl@3 readline].map { |f| Formula[f].opt_prefix }
+    paths = %w[libyaml openssl@3 readline].map { |f| formula_opt_prefix(f) }
     args = %W[
       --prefix=#{prefix}
       --enable-shared
@@ -145,31 +145,21 @@ class RubyAT27 < Formula
     end
   end
 
-  def post_install
+  post_install_steps do
     # Since Gem ships Bundle we want to provide that full/expected installation
     # but to do so we need to handle the case where someone has previously
     # installed bundle manually via `gem install`.
-    rm(%W[
-      #{rubygems_bindir}/bundle
-      #{rubygems_bindir}/bundler
-    ].select { |file| File.exist?(file) })
-    rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
-    rubygems_bindir.install_symlink Dir[libexec/"gembin/*"]
+    remove [
+      "lib/ruby/gems/{{version.major_minor}}.0/bin/bundle",
+      "lib/ruby/gems/{{version.major_minor}}.0/bin/bundler",
+    ], base: :homebrew_prefix
+    remove "lib/ruby/gems/{{version.major_minor}}.0/gems/bundler-*", base: :homebrew_prefix, recursive: true
+    symlink_children "gembin", "lib/ruby/gems/{{version.major_minor}}.0/bin",
+                     source_base: :libexec, target_base: :homebrew_prefix
 
     # Customize rubygems to look/install in the global gem directory
     # instead of in the Cellar, making gems last across reinstalls
-    config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
-    config_file.unlink if config_file.exist?
-    config_file.write rubygems_config(api_version)
-
-    # Create the sitedir and vendordir that were skipped during install
-    %w[sitearchdir vendorarchdir].each do |dir|
-      mkdir_p `#{bin}/ruby -rrbconfig -e 'print RbConfig::CONFIG["#{dir}"]'`
-    end
-  end
-
-  def rubygems_config(api_version)
-    <<~EOS
+    write_file "ruby/{{version.major_minor}}.0/rubygems/defaults/operating_system.rb", <<~RUBY, base: :lib
       module Gem
         class << self
           alias :old_default_dir :default_dir
@@ -181,11 +171,11 @@ class RubyAT27 < Formula
 
         def self.default_dir
           path = [
-            "#{HOMEBREW_PREFIX}",
+            "{{HOMEBREW_PREFIX}}",
             "lib",
             "ruby",
             "gems",
-            "#{api_version}"
+            "{{version.major_minor}}.0"
           ]
 
           @homebrew_path ||= File.join(*path)
@@ -225,11 +215,11 @@ class RubyAT27 < Formula
         end
 
         def self.default_bindir
-          "#{rubygems_bindir}"
+          "{{HOMEBREW_PREFIX}}/lib/ruby/gems/{{version.major_minor}}.0/bin"
         end
 
         def self.ruby
-          "#{opt_bin}/ruby"
+          "{{opt_prefix}}/bin/ruby"
         end
 
         # https://github.com/Homebrew/homebrew-core/issues/40872#issuecomment-542092547
@@ -238,7 +228,13 @@ class RubyAT27 < Formula
           File.join(Gem.old_default_dir, "specifications", "default")
         end
       end
-    EOS
+    RUBY
+
+    # Create the sitedir and vendordir that were skipped during install
+    run "/bin/sh",
+        args: ["-c", "mkdir -p \"$({{bin}}/ruby -rrbconfig -e 'print RbConfig::CONFIG[\"sitearchdir\"]')\""]
+    run "/bin/sh",
+        args: ["-c", "mkdir -p \"$({{bin}}/ruby -rrbconfig -e 'print RbConfig::CONFIG[\"vendorarchdir\"]')\""]
   end
 
   def caveats
