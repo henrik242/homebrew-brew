@@ -41,7 +41,7 @@ brew install henrik242/brew/kmpzip
 
 Source: https://github.com/henrik242/kmp-zip
 
-### Klaxon
+### Calendar Klaxon
 
 Menu bar app that sounds an alarm before calendar events, for people who miss the polite
 kind of notification. This is my fork of
