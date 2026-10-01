@@ -54,6 +54,17 @@ brew install --cask henrik242/brew/klaxon
 
 Source: https://github.com/henrik242/klaxon
 
+### OnAir
+
+Menu bar app that turns a light on through an [Athom Homey Pro](https://homey.app/)
+whenever a camera is in use. See [unsigned apps](#unsigned-apps).
+
+```
+brew install --cask henrik242/brew/onair
+```
+
+Source: https://github.com/henrik242/OnAir
+
 ### Quassel IRC client
 
 [Disabled in homebrew-cask](https://github.com/Homebrew/homebrew-cask/blob/5c0e5bee11729f4fe53a8afebcae4a2de472ec08/Casks/q/quassel-client.rb)
