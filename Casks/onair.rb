@@ -1,6 +1,6 @@
 cask "onair" do
-  version "3.0.2"
-  sha256 "4ebfb87e04a54ffc65d0a6f4b2602e8be22dc69bdcca44a5806e198dbcd90133"
+  version "3.0.3"
+  sha256 "0d5ed006e648e7a6fb67c0c8ff5d04d47a7050404b87958b2c14ca1b48f73e1a"
 
   url "https://github.com/henrik242/OnAir/releases/download/v#{version}/OnAir.app.tgz"
   name "OnAir"
