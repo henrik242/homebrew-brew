@@ -1,6 +1,6 @@
 cask "klaxon" do
-  version "1.0.1-fork.1"
-  sha256 "0335dd971441724d9c2872f35723d6f7af0f41945a80198e44ad0e1ea63ac825"
+  version "1.0.1-fork.2"
+  sha256 "3e5636d004687d8c4ab4d3ee337828126eea09923dde6523a836672856f4d4b6"
 
   url "https://github.com/henrik242/klaxon/releases/download/fork-v#{version}/Klaxon-#{version}.dmg"
   name "Klaxon"
