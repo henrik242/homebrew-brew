@@ -134,6 +134,17 @@ brew install henrik242/brew/vladbot
 
 Source: https://github.com/hipdrome/vladbot
 
+### Where
+
+Free offline hiking maps for Norway, desktop edition. Signed and notarized, Apple Silicon
+only.
+
+```
+brew install --cask henrik242/brew/where
+```
+
+Source: https://github.com/henrik242/where
+
 ## Unsigned apps
 
 The apps in the casks above are not notarized, and most are not signed at all, so macOS
