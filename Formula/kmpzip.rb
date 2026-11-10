@@ -10,23 +10,23 @@ class Kmpzip < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/henrik242/kmp-zip/releases/download/v2.0.0/kmpzip-macos-arm64"
-      sha256 "d7d119fe4fde8cf5c8692b80d1472916413c7991b0c8ee556d868a6f8496defa"
+      url "https://github.com/henrik242/kmp-zip/releases/download/v2.1.0/kmpzip-macos-arm64"
+      sha256 "71f7bc1a78007a073d77825ad32138bd2e033f1d725f6904c1d301418fdea84a"
     end
     on_intel do
-      url "https://github.com/henrik242/kmp-zip/releases/download/v2.0.0/kmpzip-macos-x64"
-      sha256 "152c2e5d49480c984129793b4a669f0ed95b3253b1cb5df6938ca4721d2ffcfe"
+      url "https://github.com/henrik242/kmp-zip/releases/download/v2.1.0/kmpzip-macos-x64"
+      sha256 "b28eea13ce26addde06d77cb889abd2f30f65ecde3b2ce3ec26411a1206eed5b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/henrik242/kmp-zip/releases/download/v2.0.0/kmpzip-linux-arm64"
-      sha256 "088bee9a86e8ec1367fbc9df5c17ae6436633af8805f9ea3784b0078e0246661"
+      url "https://github.com/henrik242/kmp-zip/releases/download/v2.1.0/kmpzip-linux-arm64"
+      sha256 "c43e96aa428c448e24edb1ec36ff2f67f170b62e688c35360c96b52af013add4"
     end
     on_intel do
-      url "https://github.com/henrik242/kmp-zip/releases/download/v2.0.0/kmpzip-linux-x64"
-      sha256 "bab711068289363622bbd643355bba955c30e1db41a14ee13bdbb53b01e2a9ed"
+      url "https://github.com/henrik242/kmp-zip/releases/download/v2.1.0/kmpzip-linux-x64"
+      sha256 "cfb4e7808083440e8434ecf0dbeaa9afd83c46973a6fa365567cec1678a56ac2"
     end
   end
 
