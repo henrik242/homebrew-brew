@@ -1,6 +1,6 @@
 cask "havbunn" do
-  version "1.0.0"
-  sha256 "577496c205413c90f46b565cc44d20a65963aff0fe6183acb9f0d7ddc343fa11"
+  version "1.0.1"
+  sha256 "6d863bfa4bb6bbb2db4a4edbcb8d2946564e2796f4e22a5d380fbb81c43c4a5c"
 
   url "https://github.com/henrik242/havbunn/releases/download/v#{version}/Havbunn-#{version}.zip"
   name "Havbunn"
