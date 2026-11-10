@@ -31,6 +31,17 @@ brew install henrik242/brew/envps
 
 Source: https://github.com/henrik242/envps
 
+### Havbunn
+
+Screen saver showing a Norwegian fjord seabed, drawn procedurally with Metal. Signed and
+notarized, Apple Silicon and macOS 27 or later.
+
+```
+brew install --cask henrik242/brew/havbunn
+```
+
+Source: https://github.com/henrik242/havbunn
+
 ### kmpzip
 
 Compress and extract ZIP and GZIP archives.
