@@ -1,6 +1,6 @@
 cask "havbunn" do
-  version "1.1.1"
-  sha256 "9691e63735bf76fe1fe538a9655e1e223d5e428086194fbd60b21e5a1f248888"
+  version "1.2.0"
+  sha256 "bcec6681bca24979465539ca68c57dba2e814d34e8b8b7a05b9200b589cd5ebb"
 
   url "https://github.com/henrik242/havbunn/releases/download/v#{version}/Havbunn-#{version}.zip"
   name "Havbunn"
@@ -15,7 +15,16 @@ cask "havbunn" do
   depends_on arch: :arm64
   depends_on macos: :golden_gate
 
-  screen_saver "Havbunn.saver"
+  app "Havbunn.app"
 
-  zap trash: "~/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver/Data/Library/Preferences/ByHost/no.havbunn.screensaver.*.plist"
+  zap trash: [
+    "~/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver/Data/Library/Preferences/ByHost/no.havbunn.screensaver.*.plist",
+    "~/Library/Containers/no.synth.havbunn.screensaver",
+  ]
+
+  caveats <<~EOS
+    Havbunn.app carries the screen saver as an app extension. Open the app once
+    to register it, then pick Havbunn in System Settings > Wallpaper, under
+    Screen Saver.
+  EOS
 end

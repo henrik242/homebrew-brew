@@ -33,8 +33,10 @@ Source: https://github.com/henrik242/envps
 
 ### Havbunn
 
-Screen saver showing a Norwegian fjord seabed, drawn procedurally with Metal. Signed and
-notarized, Apple Silicon and macOS 27 or later.
+Screen saver showing a Norwegian fjord seabed, drawn procedurally with Metal. Ships as
+`Havbunn.app` with the screen saver as an app extension: open the app once, then pick
+Havbunn in System Settings > Wallpaper. Signed and notarized, Apple Silicon and macOS 27
+or later.
 
 ```
 brew install --cask henrik242/brew/havbunn
