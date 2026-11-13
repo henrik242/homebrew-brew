@@ -67,6 +67,18 @@ brew install --cask henrik242/brew/klaxon
 
 Source: https://github.com/henrik242/klaxon
 
+### MtpMount
+
+Mount any device that exposes its storage over MTP-over-USB — Android phones, cameras,
+music players, e-readers — as a browsable macOS volume via Apple's File Provider API. No
+kernel extension, no reboot. Signed and notarized, Apple Silicon and macOS 26 or later.
+
+```
+brew install --cask henrik242/brew/mtp-mount
+```
+
+Source: https://github.com/henrik242/mtp-mount
+
 ### OnAir
 
 Menu bar app that turns a light on through an [Athom Homey Pro](https://homey.app/)
