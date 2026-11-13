@@ -1,6 +1,6 @@
 cask "mtp-mount" do
-  version "0.2.0"
-  sha256 "12c09781b1e897b2d0a007e4bb3824fe8a52290986f8038ec06d1416e5c7322c"
+  version "0.2.1"
+  sha256 "92c0833ae7583524a69c0b7c234089c58fd56e72d749e0a645559fc0bc3adead"
 
   url "https://github.com/henrik242/mtp-mount/releases/download/v#{version}/MtpMount-#{version}.dmg"
   name "MtpMount"
