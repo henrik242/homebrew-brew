@@ -1,6 +1,6 @@
 cask "mtp-mount" do
-  version "0.2.5"
-  sha256 "dbc142b28b8b540b79c0e68f239c87b8ce9f531b4fb73956814e57294a9c7a59"
+  version "0.2.6"
+  sha256 "0249f24dfd96fc87dbfccf0e2e3fb61084973753d9d5cd9942df75a6689281ad"
 
   url "https://github.com/henrik242/mtp-mount/releases/download/v#{version}/MtpMount-#{version}.dmg"
   name "MtpMount"
@@ -17,19 +17,29 @@ cask "mtp-mount" do
 
   app "MtpMount.app"
 
-  uninstall quit: "no.synth.mtpmount"
+  # --uninstall removes the Finder locations, the helper, the extension's data
+  # and settings, and unregisters the app so System Settings stops listing it.
+  uninstall launchctl: "no.synth.mtpmount.helper",
+            quit:      "no.synth.mtpmount",
+            script:    {
+              executable: "#{appdir}/MtpMount.app/Contents/MacOS/MtpMount",
+              args:       ["--uninstall"],
+            }
 
   zap trash: [
+    "~/Library/Application Scripts/358L7UXVJ4.no.synth.mtpmount",
+    "~/Library/Application Scripts/no.synth.mtpmount.fileprovider",
+    "~/Library/Application Support/FileProvider/no.synth.mtpmount.fileprovider",
     "~/Library/Containers/no.synth.mtpmount.fileprovider",
+    "~/Library/Group Containers/358L7UXVJ4.no.synth.mtpmount",
     "~/Library/LaunchAgents/no.synth.mtpmount.helper.plist",
+    "~/Library/Preferences/no.synth.mtpmount.plist",
   ]
 
   caveats <<~EOS
-    Open MtpMount once from /Applications to install its helper, then enable the
-    extension in System Settings > General > Login Items & Extensions >
-    File Providers > MtpMount. Connect a device over USB and pick "File transfer".
-
-    To uninstall cleanly, first run MtpMount's Troubleshooting > Uninstall… to
-    remove the helper LaunchAgent before removing the cask.
+    Open MtpMount once from /Applications, then connect a device over USB and
+    pick "File transfer". MtpMount then asks you to allow it in Finder: turn on
+    File Provider for MtpMount in System Settings > General >
+    Login Items & Extensions.
   EOS
 end
