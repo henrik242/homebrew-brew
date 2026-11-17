@@ -1,6 +1,6 @@
 cask "mtp-mount" do
-  version "0.2.6"
-  sha256 "0249f24dfd96fc87dbfccf0e2e3fb61084973753d9d5cd9942df75a6689281ad"
+  version "0.2.7"
+  sha256 "e54465f5b39da1853aee39b69ad524f5c17ce9a4eb98673528d2b7b8aede16ab"
 
   url "https://github.com/henrik242/mtp-mount/releases/download/v#{version}/MtpMount-#{version}.dmg"
   name "MtpMount"
@@ -13,7 +13,7 @@ cask "mtp-mount" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: :tahoe
+  depends_on macos: :sonoma
 
   app "MtpMount.app"
 
@@ -38,8 +38,9 @@ cask "mtp-mount" do
 
   caveats <<~EOS
     Open MtpMount once from /Applications, then connect a device over USB and
-    pick "File transfer". MtpMount then asks you to allow it in Finder: turn on
-    File Provider for MtpMount in System Settings > General >
-    Login Items & Extensions.
+    pick "File transfer". MtpMount then asks you to allow it in Finder:
+    - macOS 15 and later: turn on File Provider for MtpMount in
+      System Settings > General > Login Items & Extensions.
+    - macOS 14: click Enable at the top of the Finder window it opens.
   EOS
 end

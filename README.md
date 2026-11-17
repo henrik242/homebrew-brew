@@ -71,7 +71,7 @@ Source: https://github.com/henrik242/klaxon
 
 Mount any device that exposes its storage over MTP-over-USB — Android phones, cameras,
 music players, e-readers — as a browsable macOS volume via Apple's File Provider API. No
-kernel extension, no reboot. Signed and notarized, Apple Silicon and macOS 26 or later.
+kernel extension, no reboot. Signed and notarized, Apple Silicon and macOS 14 or later.
 
 ```
 brew install --cask henrik242/brew/mtp-mount
